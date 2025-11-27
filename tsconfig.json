@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    // Target modern JavaScript
+    "target": "ES2020",
+    // Use ES modules
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    // Allow JavaScript files
+    "allowJs": true,
+    // Skip type checking for node_modules
+    "skipLibCheck": true,
+    // Strict type checking (good for beginners to catch errors early)
+    "strict": true,
+    // Don't allow implicit any
+    "noImplicitAny": true,
+    // Check for unused variables
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    // Ensure return types are explicit
+    "noImplicitReturns": true,
+    // Module resolution
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    // Enable JSX
+    "jsx": "preserve",
+    // Support for Next.js
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    // Path aliases - allows @/ to refer to src/
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  // Include these files/directories
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  // Exclude these
+  "exclude": [
+    "node_modules"
+  ]
+}
