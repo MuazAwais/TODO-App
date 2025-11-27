@@ -1,0 +1,14 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with rounded corners for iOS -->
+  <rect width="180" height="180" rx="40" fill="#8B5CF6"/>
+  
+  <!-- Checkmark -->
+  <path d="M60 90L75 105L120 60" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="45" cy="45" r="8" fill="white" opacity="0.3"/>
+  <circle cx="135" cy="45" r="8" fill="white" opacity="0.3"/>
+  <circle cx="45" cy="135" r="8" fill="white" opacity="0.3"/>
+  <circle cx="135" cy="135" r="8" fill="white" opacity="0.3"/>
+</svg>
+

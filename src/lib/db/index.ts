@@ -8,14 +8,24 @@ import * as schema from "./schema";
 
 // Get database URL from environment variable
 // For local SQLite file, use: file:./db.sqlite
-// This creates a local SQLite database file (no server needed!)
+// For Turso (cloud), use: libsql://your-database.turso.io
 const dbUrl = process.env.DATABASE_URL || "file:./db.sqlite";
+
+// Get Turso auth token (only needed for cloud Turso databases)
+// For local SQLite files, this is not needed
+const tursoAuthToken = process.env.TURSO_AUTH_TOKEN;
 
 // Create libSQL client
 // This is a pure JavaScript implementation - no native compilation needed!
 // It works on Windows, Mac, Linux without any Python or build tools
+// Supports both local SQLite files and Turso cloud databases
 const client = createClient({
-  url: dbUrl, // Local file path for SQLite
+  url: dbUrl,
+  // Only include authToken if it's a Turso URL (starts with libsql://)
+  // and if TURSO_AUTH_TOKEN is provided
+  ...(dbUrl.startsWith("libsql://") && tursoAuthToken
+    ? { authToken: tursoAuthToken }
+    : {}),
 });
 
 // Create Drizzle database client

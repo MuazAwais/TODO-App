@@ -14,8 +14,13 @@ export default {
   
   // Database file location
   // Use "file:" prefix for local SQLite files
+  // Use "libsql://" prefix for Turso cloud databases
   dbCredentials: {
     url: process.env.DATABASE_URL || "file:./db.sqlite",
+    // Add authToken for Turso (only needed for cloud databases)
+    ...(process.env.TURSO_AUTH_TOKEN
+      ? { authToken: process.env.TURSO_AUTH_TOKEN }
+      : {}),
   },
   
   // Verbose output (helpful for debugging)
