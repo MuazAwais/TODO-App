@@ -79,7 +79,7 @@ export default function DashboardPage() {
   );
 
   // Mutation hook for creating tasks - MUST be called before any conditional returns
-  const [createTask, { isLoading: isCreating }] = useCreateTaskMutation();
+  const [createTask] = useCreateTaskMutation();
 
   // Handle 401 errors - redirect to login
   useEffect(() => {

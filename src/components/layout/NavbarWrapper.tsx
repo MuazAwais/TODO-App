@@ -15,7 +15,6 @@ interface User {
 
 export default function NavbarWrapper() {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Fetch current user
@@ -34,8 +33,6 @@ export default function NavbarWrapper() {
       } catch (error) {
         console.error("Failed to fetch user:", error);
         setUser(null);
-      } finally {
-        setIsLoading(false);
       }
     };
 

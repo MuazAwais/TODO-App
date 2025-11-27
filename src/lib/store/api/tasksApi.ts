@@ -69,7 +69,7 @@ export const tasksApi = createApi({
     // Creates hook: useGetTaskQuery(id)
     getTask: builder.query<Task, number>({
       query: (id) => `/${id}`,
-      providesTags: (result, error, id) => [{ type: "Task", id }],
+      providesTags: (_result, _error, id) => [{ type: "Task", id }],
     }),
     
     // POST /api/tasks - Create new task
@@ -115,7 +115,7 @@ export const tasksApi = createApi({
         method: "PUT",
         body: data,
       }),
-      invalidatesTags: (result, error, { id }) => [
+      invalidatesTags: (_result, _error, { id }) => [
         { type: "Task", id },
         "Task",
       ],
