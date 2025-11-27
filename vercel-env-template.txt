@@ -1,9 +1,0 @@
-# Vercel Environment Variables Template
-# Copy these to your Vercel project settings
-
-DATABASE_URL=libsql://todo-muaz-awais.aws-ap-south-1.turso.io
-
-TURSO_AUTH_TOKEN=[Run: turso db tokens create todo-muaz-awais]
-
-JWT_SECRET=[Run: node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"]
-
