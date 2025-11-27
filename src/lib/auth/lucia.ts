@@ -20,10 +20,9 @@ export const lucia = new Lucia(adapter, {
     attributes: {
       // Only send cookie over HTTPS in production
       secure: process.env.NODE_ENV === "production",
-      // Prevent JavaScript from accessing the cookie (XSS protection)
-      httpOnly: true,
       // SameSite prevents CSRF attacks
       sameSite: "strict",
+      // Note: httpOnly is automatically set to true by Lucia for security
     },
   },
   
