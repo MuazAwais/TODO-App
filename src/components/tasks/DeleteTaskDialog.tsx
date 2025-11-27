@@ -78,7 +78,7 @@ export default function DeleteTaskDialog({
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete the task <strong>"{taskTitle}"</strong>.
+            This will permanently delete the task <strong>&quot;{taskTitle}&quot;</strong>.
             This action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
